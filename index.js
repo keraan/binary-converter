@@ -4,7 +4,6 @@ const convertbtn = document.getElementById("convert-btn")
 
 convertbtn.addEventListener("click", function() {
     document.getElementById("converted-num").innerText = 'Converted Number: ' + binaryToDecimal(binaryToArr(binary))
-    console.log(binaryToDecimal(binaryToArr('1101010100')))
 })
 
 let binary = ''
@@ -19,9 +18,6 @@ function binaryToArr(binary) {
     return arr.map(x => parseInt(x))
 }
 
-console.log(binaryToArr(binary))
-
-
 function binaryToDecimal(binary) {
     let number = 0;
     let x = binary.length - 1;
@@ -32,5 +28,3 @@ function binaryToDecimal(binary) {
     }
     return number
 }
-
-console.log(binaryToDecimal(binaryToArr(binary)))
