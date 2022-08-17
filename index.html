@@ -7,18 +7,26 @@
     <title>Binary To Decimal Converter</title>
     <link rel="stylesheet" href="style.css">
   </head>
+  
   <body>
-    <div>
-            <label>Insert Binary Number</label>
-            <input type="binaryNum" id="binaryNum" name="number" onblur="getValue()">
-            <button id="convert-btn" type="button">Convert</button>
-            <p id="converted-num">Converted Number: </p>
+    <header class="header">
+      <div>
+        <h1>Decimal to Binary Converter (both ways)</h1>
+      </div>
+    </header>
+
+
+    <div class="converter">
+      <label class = 'label'>Insert Binary Number</label>
+      <input type="binaryNum" id="binaryNum" name="number" onblur="getValue()">
+      <button id="convert-btn" type="button" class="convert-btn">Convert</button>
+      <p id="converted-num" class="convertedNumber">Converted Number: </p>
     </div>
-    <div>
-      <label>Insert Decimal Number</label>
+    <div class="converter">
+      <label class = 'label'>Insert Decimal Number</label>
       <input type="decimalNum" id="decimalNum" name="number" onblur="getValue()">
-      <button id="decimal-btn" type="button">Convert</button>
-      <p id="converted-number">Converted Number: </p>
+      <button id="decimal-btn" type="button" class="convert-btn">Convert</button>
+      <p id="converted-number" class="convertedNumber">Converted Number: </p>
   </div>
 	<script src="index.js"></script>
   </body>
