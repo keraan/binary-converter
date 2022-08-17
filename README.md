@@ -1,5 +1,3 @@
 # binary-to-decimal
-converts binary to number
-
-#decimal-to-binary <br>
+converts binary to number <br>
 converts decimal to binary
