@@ -34,6 +34,8 @@
 .convertedNumber {
     margin: 2px;
     margin-top: 1px;
+    inline-size: 200px;
+    overflow-wrap: break-word;
 }
 
 body {
