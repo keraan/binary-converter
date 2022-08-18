@@ -1,29 +1,55 @@
-
+const binaryNum =document.getElementById("binaryNum") 
+const binarybtn = document.getElementById("binary-btn")
 const convertedBinary = document.getElementById("converted-binary")
-const convertbtn = document.getElementById("convert-btn")
-const convertedDecimal = document.getElementById("converted-decimal")
+
+const decimalNum = document.getElementById("decimalNum")
 const decimalbtn = document.getElementById("decimal-btn")
+const convertedDecimal = document.getElementById("converted-decimal")
+
 const IPNum = document.getElementById("IPNum")
 const IPbtn = document.getElementById("IP-btn")
 const convertedIP = document.getElementById("converted-IP")
 
-convertbtn.addEventListener("click", function() {
+
+// Listeners 
+binarybtn.addEventListener("click", function() {
     convertedBinary.innerText = getDecimalStr(binary)
+})
+
+binaryNum.addEventListener("keypress", function(event) {
+    if (event.key === 'Enter') {
+        event.preventDefault();
+        binarybtn.click()
+    }
 })
 
 decimalbtn.addEventListener("click", function() {
     convertedDecimal.innerText = getBinaryStr(decimalValue)
 })
 
+decimalNum.addEventListener("keypress", function(event) {
+    if (event.key === 'Enter') {
+        event.preventDefault();
+        decimalbtn.click()
+    }
+})
+
 IPbtn.addEventListener('click', function() {
     convertedIP.innerText = convertIPToBinary(ipValue)
 })
 
+IPNum.addEventListener("keypress", function(event) {
+    if (event.key === 'Enter') {
+        event.preventDefault();
+        IPbtn.click()
+    }
+})
+
 
 function getValue() {
-    binary = document.getElementById("binaryNum").value
-    decimalValue = document.getElementById("decimalNum").value
-    ipValue = document.getElementById("IPNum").value
+    binary = binaryNum.value
+    decimalValue = decimalNum.value
+    ipValue = IPNum.value
 }
 
 // Binary To Decimal Converter
