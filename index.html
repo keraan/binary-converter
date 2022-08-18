@@ -20,19 +20,22 @@
       <label class = 'label'>Insert Binary Number</label>
       <input type="binaryNum" id="binaryNum" name="number" onblur="getValue()">
       <button id="convert-btn" type="button" class="convert-btn">Convert</button>
-      <p id="converted-num" class="convertedNumber">Converted Number: </p>
+      <h4 class="convertedNumber">Converted Number:</h4>
+      <p id="converted-binary" class="convertedNumber" onclick="copyToClipboard('converted-binary')"> </p>
     </div>
     <div class="converter">
       <label class = 'label'>Insert Decimal Number</label>
       <input type="decimalNum" id="decimalNum" name="number" onblur="getValue()">
       <button id="decimal-btn" type="button" class="convert-btn">Convert</button>
-      <p id="converted-number" class="convertedNumber">Converted Number: </p>
+      <h4 class="convertedNumber">Converted Number:</h4>
+      <p id="converted-decimal" class="convertedNumber" onclick="copyToClipboard('converted-decimal')"></p>
     </div>
     <div class="converter">
       <label class = 'label'>Insert IPv4 Address</label>
       <input type="IPNum" id="IPNum" name="number" onblur="getValue()">
       <button id="IP-btn" type="button" class="convert-btn">Convert</button>
-      <p id="convertedIP" class="convertedNumber">Converted Number: </p>
+      <h4 class="convertedNumber">Converted Number:</h4>
+      <p id="converted-IP" class="convertedNumber" onclick="copyToClipboard('converted-IP')"></p>
   </div>
 	<script src="index.js"></script>
   </body>

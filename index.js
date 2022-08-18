@@ -1,31 +1,24 @@
 
-const convertednum = document.getElementById("converted-num")
+const convertedBinary = document.getElementById("converted-binary")
 const convertbtn = document.getElementById("convert-btn")
-const convertednumber = document.getElementById("converted-number")
+const convertedDecimal = document.getElementById("converted-decimal")
 const decimalbtn = document.getElementById("decimal-btn")
 const IPNum = document.getElementById("IPNum")
 const IPbtn = document.getElementById("IP-btn")
-const convertedIP = document.getElementById("convertedIP")
+const convertedIP = document.getElementById("converted-IP")
 
 convertbtn.addEventListener("click", function() {
-    document.getElementById("converted-num").innerText = 'Converted Number: ' + binaryToDecimal(binaryToArr(binary))
+    convertedBinary.innerText = getDecimalStr(binary)
 })
 
 decimalbtn.addEventListener("click", function() {
-    getDecimal(decimalValue)
-    document.getElementById("converted-number").innerText = 'Converted Number: ' + sortDecimalArray(decimal)
-    console.log(sortDecimalArray(decimal))
+    convertedDecimal.innerText = getBinaryStr(decimalValue)
 })
 
 IPbtn.addEventListener('click', function() {
-    console.log(convertIPToBinary(ipValue))
-    convertedIP.innerText = 'Converted Number: ' + convertIPToBinary(ipValue)
+    convertedIP.innerText = convertIPToBinary(ipValue)
 })
 
-
-let binary = ''
-let decimalValue = ''
-binary = binary.toString()
 
 function getValue() {
     binary = document.getElementById("binaryNum").value
@@ -34,6 +27,7 @@ function getValue() {
 }
 
 // Binary To Decimal Converter
+let binary = ''
 
 function binaryToArr(binary) {
     let arr = Array.from(binary)
@@ -51,8 +45,12 @@ function binaryToDecimal(binary) {
     return number
 }
 
+function getDecimalStr(binary) {
+    return binaryToDecimal(binaryToArr(binary))
+}
 
 // Decimal to Binary Converter
+let decimalValue = ''
 
 function getDecimal(number) {
     decimal = []
@@ -97,7 +95,6 @@ function getBinaryStr(number) {
     return sortDecimalArray(getDecimal(number))
 }
 
-
 function convertIPToBinary(ip) {
     ipResult = ''
     console.log(ip)
@@ -106,7 +103,6 @@ function convertIPToBinary(ip) {
             alert("IP cannot exceed 255!")
             exit
         }
-
         if (i < IPToArr(ip).length -1) {
             ipResult += getBinaryStr(ipArr[i])+ '.'
         } else {
@@ -120,3 +116,13 @@ function IPToArr(ip) {
     ipArr = ip.split('.')
     return ipArr
 }
+
+
+// Copy To Clipboard
+function copyToClipboard(id) {
+    var copyText = document.getElementById(id).innerText;
+    navigator.clipboard.writeText(copyText).then(() => {
+        alert('Copied to Clipboard!')
+        document.getElementById('copiedToClipboard').textContent = 'Copied to Clipboard!'
+    });
+  }
