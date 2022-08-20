@@ -56,6 +56,10 @@ function getValue() {
 let binary = ''
 
 function binaryToArr(binary) {
+    if (binary.includes(2||3||4||5||6||7||8||9) == true) {
+        alert("Insert only '1' and '0'")
+        exit
+    }
     let arr = Array.from(binary)
     return arr.map(x => parseInt(x))
 }
