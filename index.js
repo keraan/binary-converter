@@ -154,12 +154,10 @@ function copyToClipboard(id) {
   }
 
 
-  // Theme Changer
+// Theme Changer
 
 const header = document.querySelector('header')
-
 const body = document.body
-
 const converter = document.getElementsByClassName('converter')
 
 const summerTheme = document.getElementById('Summer')
