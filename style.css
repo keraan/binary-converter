@@ -42,3 +42,31 @@ body {
     background-color: #438496;
     font-family: Arial, Helvetica, sans-serif;
 }
+
+.theme-box {
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+}
+
+.theme {
+    display: inline-block;
+    border:2px solid #b37d4e;
+    position: relative;
+    right: 0px;
+    bottom: 0px;
+    width: 40px;
+    height: 40px;
+}
+
+#Summer {
+    background-color:#cd5360;
+}
+
+#Brown {
+    background-color:#e3d5ca
+}
+
+#Blue {
+    background-color: #457b9d
+}

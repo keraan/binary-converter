@@ -56,6 +56,10 @@ function getValue() {
 let binary = ''
 
 function binaryToArr(binary) {
+    if (binary.includes(2||3||4||5||6||7||8||9) == true) {
+        alert("Insert only '1' and '0'")
+        exit
+    }
     let arr = Array.from(binary)
     return arr.map(x => parseInt(x))
 }
@@ -151,3 +155,70 @@ function copyToClipboard(id) {
         document.getElementById('copiedToClipboard').textContent = 'Copied to Clipboard!'
     });
   }
+
+
+// Theme Changer
+
+const header = document.querySelector('header')
+const body = document.body
+const converter = document.getElementsByClassName('converter')
+
+const summerTheme = document.getElementById('Summer')
+const brownTheme = document.getElementById('Brown')
+const blueTheme = document.getElementById('Blue')
+
+function changeClassBG(classes, colour) {
+    for (i = 0; i < classes.length; i++) {
+        classes[i].style.backgroundColor = colour
+    }
+}
+
+const themes = [
+    Summer = {
+        header: '#cd5360',
+        body: '#438496',
+        converter: 'grey'
+    },
+    Brown = {
+        header: '#d5bdaf',
+        body: '#e3d5ca',
+        converter: '#d6ccc2'
+    },
+    Blue = {
+        header: '#1d3557',
+        body: '#457b9d',
+        converter: '#a8dadc'
+    }
+]
+
+function setThemes(arr, number) {
+    header.style.backgroundColor = arr[number].header
+    body.style.backgroundColor = arr[number].body
+    changeClassBG(converter, arr[number].converter)
+}
+
+
+
+function getRandomNumber(maxNum) {
+    return Math.floor(Math.random() * maxNum)
+}
+
+function getRandomTheme(maxNum) {
+    return Object.keys(themes)[getRandomNumber(maxNum)]
+}
+
+function setRandomTheme(maxNum) {
+    setThemes(themes, getRandomNumber(maxNum))
+}
+
+
+
+summerTheme.addEventListener("click", function() {
+    setThemes(themes, 0)
+})
+brownTheme.addEventListener("click", function() {
+    setThemes(themes, 1)
+})
+blueTheme.addEventListener("click", function() {
+    setThemes(themes, 2)
+})
