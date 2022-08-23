@@ -123,7 +123,6 @@ function getBinaryStr(number) {
 
 function convertIPToBinary(ip) {
     ipResult = ''
-    console.log(ip)
     for (i = 0; i < IPToArr(ip).length; i++) {
         if (IPToArr(ip)[i] > 255) {
             alert("IP cannot exceed 255!")
