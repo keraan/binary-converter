@@ -10,6 +10,12 @@ const IPNum = document.getElementById("IPNum")
 const IPbtn = document.getElementById("IP-btn")
 const convertedIP = document.getElementById("converted-IP")
 
+const binaryIP = document.getElementById("binaryIP")
+const binaryIPbtn = document.getElementById('binaryIP-btn')
+const convertedBinaryIP = document.getElementById('converted-binaryIP')
+
+const ipBinaryStr = '11000000.01100101.00011100.00001010'
+
 
 // Listeners 
 binarybtn.addEventListener("click", function() {
@@ -45,11 +51,23 @@ IPNum.addEventListener("keypress", function(event) {
     }
 })
 
+binaryIPbtn.addEventListener('click', function() {
+    convertedBinaryIP.innerText = getIPBinaryStr(binaryIPValue)
+})
+
+binaryIP.addEventListener("keypress", function(event) {
+    if (event.key === 'Enter') {
+        event.preventDefault();
+        binaryIPbtn.click()
+    }
+})
+
 
 function getValue() {
     binary = binaryNum.value
     decimalValue = decimalNum.value
     ipValue = IPNum.value
+    binaryIPValue = binaryIP.value
 }
 
 // Binary To Decimal Converter
@@ -145,6 +163,26 @@ function IPToArr(ip) {
     ipArr = ip.split('.')
     return ipArr
 }
+
+
+// binary to ipv4
+function getIPBinaryStr(ipBinaryStr) {
+    let binaryStr = ipBinaryStr
+    let binaryArr = binaryStr.split(".")
+    let result = ''
+    console.log(binaryArr)
+    for (i = 0; i < binaryArr.length; i++) {
+        if (i < binaryArr.length - 1) {
+            result += getDecimalStr(binaryArr[i]) + '.'
+        } else {
+            result += getDecimalStr(binaryArr[i])
+        }
+        console.log(result)
+    }
+    return result
+}
+
+
 
 
 // Copy To Clipboard
